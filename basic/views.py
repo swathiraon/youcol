@@ -17,7 +17,7 @@ def signin(request):
 		user = authenticate(request, username=username, password=password)
 		if user is not None:
 			login(request, user)
-			user=request.user.username
+			
 			ob=Topic.objects.all()
 			context={'post':ob}
 			return render(request,'basic/topic.html',context)
