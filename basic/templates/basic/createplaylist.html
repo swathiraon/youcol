@@ -1,0 +1,19 @@
+<form action="/createplayll/" method="POST">
+	{% csrf_token %}
+	
+	 <select name="topic">
+	 	{%	for u in post%}
+	  <option value="{{u.name}}">{{u.name}}</option>
+	  {%endfor%}
+	</select> 
+	<br>
+	<input type="text" name="title" placeholder="title" >
+	<br>
+	
+	<input type="textarea" name="description" placeholder="Description">
+	<br>
+	
+	
+
+	<input type="Submit" value="Create playlist">
+</form>

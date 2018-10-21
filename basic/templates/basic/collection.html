@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+	<link rel="stylesheet" type="text/css" href="/static/basic/style1.css">
+
+</head>
+<body>
+
+
+	{%for c in posts%}
+	<div class="card" style="width: 18rem;">
+  <div class="card-body">
+	<h5 class="card-title">{{c.title}}</h5>
+	
+	<p class="card-text">{{c.description}}</p>
+	<a href="playlist/{{c.pk}}" class="card-link">Know More</a>
+	
+  </div>
+</div>
+
+{%endfor%}
+	
+		
+		{{c.title}}
+		
+		
+
+
+</body>
+</html>
+
+
+
+

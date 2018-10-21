@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Topic</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+	<link rel="stylesheet" type="text/css" href="/static/basic/style1.css">
+	</head>
+	<body>
+		{% for topic in post%}
+		{%csrf_token%}
+		<div class="card" style="width: 18rem;">
+			
+			<div class="card-body">
+				<h5 class="card-title">{{topic.name}}</h5>
+				<p class="card-text">{{topic.tdescription}}</p>
+				<a href="/{{topic.id}}/" class="btn btn-primary">Go somewhere</a>
+			</div>
+		</div>
+		{%endfor%}
+	</body>
+</html>
