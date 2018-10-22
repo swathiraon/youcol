@@ -1,17 +1,9 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+{%extends 'basic/base.html'%}
 
-
-	<link rel="stylesheet" type="text/css" href="/static/basic/style1.css">
-
-</head>
-<body>
-
-
+{%block body%}
 	{%for c in posts%}
+	{{c.title}}
 	<div class="card" style="width: 18rem;">
   <div class="card-body">
 	<h5 class="card-title">{{c.title}}</h5>
@@ -23,15 +15,8 @@
 </div>
 
 {%endfor%}
+{%endblock%}
 	
-		
-		{{c.title}}
-		
-		
-
-
-</body>
-</html>
 
 
 

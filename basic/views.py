@@ -21,7 +21,7 @@ def signin(request):
 			ob=Topic.objects.all()
 			context={'post':ob}
 			return render(request,'basic/topic.html',context)
-	return render(request,'basic/home.html')
+	return render(request,'basic/login.html')
 
 def viewtopic(request):
 	ob=Topic.objects.all()
@@ -44,7 +44,7 @@ def signup(request):
 			if password==repassword:
 				user = User.objects.create_user(username,email,password)
 				user.save()
-				return render(request,'basic/home.html')
+				return redirect(signout)
 
 			else:
 				return HttpResponse("password mismatch")
@@ -52,7 +52,6 @@ def signup(request):
 	return render(request,'basic/signup.html')
 
 	
-
 
 def playvideo(request,topic_id,p_id):
 	tid=Topic.objects.get(pk=topic_id)
@@ -72,16 +71,20 @@ def collection(request,topic_id):
 
 
 def createplay(request):
-	if request.method=="POST":	 
-		username = request.user
-		print(username)
-		topic = request.POST['topic']
-		t=Topic.objects.get(name=topic)
-		title=request.POST['title']
-		description=request.POST['description']
-		np=Playlist.objects.create(user=username,topic=t,title=title,description=description)
-		np.save()
-		return HttpResponse("Playlist created")
+	if request.method=="POST":
+		if request.user.is_authenticated:
+
+			username = request.user
+			print(username)
+			topic = request.POST['topic']
+			t=Topic.objects.get(name=topic)
+			title=request.POST['title']
+			description=request.POST['description']
+			np=Playlist.objects.create(user=username,topic=t,title=title,description=description)
+			np.save()
+			return HttpResponse("Playlist created")
+		else:
+			return redirect(signin)
 
 	post=Topic.objects.all()
 	context={'post':post}
@@ -116,14 +119,26 @@ def addurl(request,topic_id,pid):
 																			
 	return redirect(playvideo,topic_id=topic_id,p_id=pid)
 
+def signout(request):
+    logout(request)
+    return redirect(home)
 
 
 
 
 
 
-		
 
 
 
-	
+
+
+
+
+
+
+
+
+
+
+

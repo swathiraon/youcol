@@ -9,18 +9,28 @@
 <div class="lg">
 
 	<div class="card" style="width: 26rem;" align="center">
-  <div class="card-body">
-
-<form action="/login/" method="POST">
-	{% csrf_token %}
-	<input type="text" name="username" placeholder="Enter username" >
-	<input type="password" name="password" placeholder="Enter password">
-	<br>
-	<input type="Submit" name="login" value="Login" >
-
-</form>
-</div>
-</div>
+			<div class="card-body">
+				<form action="/signin/" method="POST">
+					{% csrf_token %}
+					<div class="form-group required">
+						<div class="input-container">
+							<span class="glyphicon-glyphicon-user"></span>
+							<input type="text" name="username" placeholder="Enter username" required>
+							<br>
+						</div>
+						<p>
+							<span class="glyphicon glyphicon-password"></span>
+						<input type="password" name="password" placeholder="Enter password" required></p>
+						<br>
+						<input type="Submit" name="Sign In" value="Sign IN" >
+					</div>
+				</div>
+				
+			</form>
+			
+			<h2>OR</h2>
+			<a href="/signup/" class='btn btn-primary su'  >Sign Up</a>
+		</div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

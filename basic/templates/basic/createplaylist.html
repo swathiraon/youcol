@@ -1,7 +1,15 @@
-<form action="/createplayll/" method="POST">
+{%extends "basic/base.html"%}
+
+
+{%block body%}
+
+<div class="card" style="width: 26rem;" align="center">
+  <div class="card-body">
+
+<form class="f1"action="/createplayll/" method="POST">
 	{% csrf_token %}
 	
-	 <select name="topic">
+	<h6> Select topic:<select name="topic" >
 	 	{%	for u in post%}
 	  <option value="{{u.name}}">{{u.name}}</option>
 	  {%endfor%}
@@ -12,8 +20,16 @@
 	
 	<input type="textarea" name="description" placeholder="Description">
 	<br>
-	
+	</h6>
 	
 
 	<input type="Submit" value="Create playlist">
 </form>
+
+
+</div>
+</div>
+
+{%endblock%}
+
+

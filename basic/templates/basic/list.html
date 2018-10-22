@@ -1,44 +1,62 @@
 
+  {%extends "basic/base.html" %}  
     
-    {% load static %}
+{%load static%}
 
-<html>
-  <head>{%load static%}
+ 
+    {%block style%}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="/static/basic/style1.css">
-  </head>
-  <body>
+    
+    
+    {%endblock%}
 
 
+  {%block navb%}
+<nav class="navbar navbar-expand-sm nv" >
+    <a class="navbar-brand" href="/home/">
+      <img src="{% static 'basic/logo.png' %}" alt="Logo" style="width:40px;">
+    </a>
+    <ul style="list-style: none;">
+      <li class="nav-item"style="margin:10px">
+        <a class="nav-link" href="/topic/">Collections</a>
+      </li>
 
-<div class="container">
+      {%if not user.is_authenticated%}
+      <li class="nav-item"style="margin:10px">
+        <a class="nav-link" href="/signin/">Login</a>
+      </li>
 
-    <nav class="navbar navbar-expand-sm nv1">
-   <a class="navbar-brand" href="/">
-    <img src="{% static 'basic/logo.png' %}" alt="Logo" style="width:40px;">
-  </a>
+      {%endif%}
+
+      {%if user.is_authenticated%}
+      <li class="nav-item"style="margin:10px">
+        <a class="nav-link" href="/logout/">Sign Out</a>
+      </li>
+      {%endif%}
+   <li class="nav-item"style="margin:10px">
+        <a class="nav-link" href="/createplayll/">Create a playlist</a>
+      </li>
+      {% if user.is_authenticated %}
+      {% if user == playlist.user %}
+      <li class="nav-item"style="margin:10px">
+        <a class="nav-link "  data-toggle="modal" data-target="#myModal"  style="color: white;
   
-<li class="nav-item"style="margin:10px">
-      <a class="nav-link" href="/topic/">Collections</a>
-    </li>
+  margin-bottom: 20px;
+    padding: 14px 16px;
+    font-size: 20px;
+    display: inline;
+    font-weight: 500;">Add Videos</a>
+      </li>
+      {%endif%}
 
-  <h2 style="align: center">You Col</h2>
 
 
-  <li class="nav-item"style="margin:10px">
-      <a class="nav-link" href="/">Logout
-</nav> 
-</div>
-    {% if user.is_authenticated %}
-    <div class="container" id="1" style="align:right" >
-
-      <div class="card" style="width: 18rem; display:inline-block">
-        <!-- Button to Open the Modal -->
-        {% if user == playlist.user %}
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="width: 100px;">
-        Add Videos
-        </button>
-        {% endif %}
+ 
+    
+        
+        
         <!-- The Modal -->
         <div class="modal" id="myModal">
           <div class="modal-dialog">
@@ -62,16 +80,50 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-        {%endif%}
         
-        <div class="container">
+        {%endif%}
+
+
+
+
+
+
+
+
+    </ul>
+  </nav>
+
+  {%endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{%block body%}
+ 
+        
+        <div class="container" style="background-color: transparent;">
           <div class="row">
             
             {%for c in posts%}
             <div class="col-md-6">
-              <div class="card" style="width: 550;" align="center">
+              <div class="card  play" style="width: 550;" align="center">
                 <div class="card-body" >
                   <!--{{c}}-->
                   <iframe width="500" height="300" src="https://www.youtube.com/embed/{{c}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>
@@ -79,14 +131,11 @@
               </div>
             </div>
             {%endfor%}
+
           </div>
         </div>
         
         
         
       </div>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    </body>
-  </html>
+      {%endblock%}
