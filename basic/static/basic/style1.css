@@ -16,10 +16,13 @@ input
 
 body { 
  	background-image:linear-gradient(to bottom right,#000000 ,#696969 );
+ 	min-width: 100vw;
+ 	min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
     padding: 0;
+    
 }
 
 
