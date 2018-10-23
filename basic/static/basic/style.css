@@ -208,4 +208,12 @@ input[type="Submit"][value="Create playlist"]
 
 
 
-}			
+}	
+
+ .flex-container {
+  display: flex;
+ 
+  justify-content: flex-start;
+
+}
+

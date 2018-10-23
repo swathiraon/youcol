@@ -10,10 +10,10 @@
 
 
 	{%block body%}
-	
+	<div style="display:flex;">
 		{% for topic in post%}
 		
-		<div class="card" style="width: 18rem;">
+		<div class="card" style="width: 550; ">
 			
 			<div class="card-body">
 				<h5 class="card-title">{{topic.name}}</h5>
@@ -22,6 +22,7 @@
 			</div>
 		</div>
 		{%endfor%}
+	</div>
 
 		{%endblock%}
 	

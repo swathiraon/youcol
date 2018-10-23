@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.models import User
 from django.shortcuts import render,HttpResponse,redirect
 from  basic.models import Topic,Playlist
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -52,14 +53,14 @@ def signup(request):
 	return render(request,'basic/signup.html')
 
 	
-
+@login_required
 def playvideo(request,topic_id,p_id):
 	tid=Topic.objects.get(pk=topic_id)
 	video=Playlist.objects.get(topic=tid,pk=p_id)
 	context={'posts':video.url,'pid':p_id,'topic_id':topic_id, 'playlist':video}
 	return render(request,'basic/list.html',context)
 
-
+@login_required
 def collection(request,topic_id):
 	tid=Topic.objects.get(pk=topic_id)
 	video=Playlist.objects.filter(topic=tid)
@@ -69,7 +70,7 @@ def collection(request,topic_id):
 	return render(request,'basic/collection.html',context)
 
 
-
+@login_required
 def createplay(request):
 	if request.method=="POST":
 		if request.user.is_authenticated:
@@ -91,7 +92,7 @@ def createplay(request):
 	return render(request,'basic/createplaylist.html',context)
 
 
-		
+@login_required	
 def addurl(request,topic_id,pid):
 	if(request.method=='POST'):
 		u=request.POST['url']

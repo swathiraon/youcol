@@ -2,9 +2,11 @@
 {%extends 'basic/base.html'%}
 
 {%block body%}
+<div class="flex-container"style="display:flex">
 	{%for c in posts%}
-	{{c.title}}
-	<div class="card" style="width: 18rem;">
+	
+	<div class="card" style="width: 18rem;
+    margin: 100px ;" >
   <div class="card-body">
 	<h5 class="card-title">{{c.title}}</h5>
 	
@@ -15,6 +17,7 @@
 </div>
 
 {%endfor%}
+</div>
 {%endblock%}
 	
 

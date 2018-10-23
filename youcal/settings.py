@@ -27,6 +27,7 @@ SECRET_KEY = 'j#59v901v7l4bzi53ne3kjtcce*)yah4dujiz$x+!cx=332=zs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+LOGIN_URL = '/signin/'
 ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0']
 
 

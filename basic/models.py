@@ -1,3 +1,4 @@
+
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.postgres.fields import ArrayField
@@ -9,6 +10,7 @@ class Topic(models.Model):
 
 	def __str__(self):
 		return str(self.name)
+
 
 
 class Playlist(models.Model):
