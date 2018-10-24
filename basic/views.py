@@ -21,7 +21,7 @@ def signin(request):
 			
 			ob=Topic.objects.all()
 			context={'post':ob}
-			return render(request,'basic/topic.html',context)
+			return redirect(viewtopic)
 	return render(request,'basic/login.html')
 
 def viewtopic(request):
