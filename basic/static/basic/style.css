@@ -14,7 +14,7 @@
   min-height: 100vh;
 }
 .card{
-	background-color: white;
+	background-image: linear-gradient(to bottom right,#FFFAF0,  #fff05c, #FFFAF0,#fff05c, );
 	background-repeat: no-repeat;
     background-size: cover;
 	border-radius: 5%;
@@ -27,7 +27,8 @@
 form {
 	
     width: 300px;
-    margin: 0 auto;
+
+   
 }
 
 input
@@ -73,7 +74,7 @@ input[type="Submit"][value="Sign In"]
 
 
 
-	border-radius: 25px;
+	border-radius: 10px;
 	
 	color: white;
 	width: 150px;
@@ -114,7 +115,7 @@ border:1px solid #5AB0DB;
     margin: 0 auto;
 	
 	color: white;
-	border-radius: 25px;
+	border-radius: 10px;
 	width: 150px;
 	height: 50px;
 }
