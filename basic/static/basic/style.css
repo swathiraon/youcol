@@ -13,13 +13,13 @@
   min-width: 100vw;
   min-height: 100vh;
 }
-.card{
+.custom_card{
 	background-image: linear-gradient(to bottom right,#FFFAF0,  #fff05c, #FFFAF0,#fff05c, );
 	background-repeat: no-repeat;
     background-size: cover;
 	border-radius: 5%;
-	width: 300px;
-    margin: 100px auto;
+	width: auto;
+    margin: 10px auto;
     padding: 15px;
     border-color: currentColor;
 }
