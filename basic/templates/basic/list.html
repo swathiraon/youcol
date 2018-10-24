@@ -29,7 +29,7 @@
         {% if user.is_authenticated %}
             {% if user == playlist.user %}
                 <li class="nav-item"style="margin:10px">
-                    <a class="nav-link "  data-toggle="modal" data-target="#myModal"  style="color: white;
+                    <a class="nav-link "  data-toggle="modal" data-target="#myModal"  style="color: black;
                         
                         margin-bottom: 20px;
                         padding: 14px 16px;
@@ -74,11 +74,11 @@
             
             
             <div class="container" style="background-color: transparent;">
-                <div class="row">
+                <div class="row" style="margin-top:20px;">
                     
                     {%for c in posts%}
-                    <div class="col-md-4" style="width:400px;">
-                        <div class="card  play"   align="center">
+                    <div class="col-md-4" >
+                        <div class="card  play"  style="margin-right:10px;" align="center">
                             <div class="card-body"   >
                                 <!--{{c}}-->
                                 <iframe width="350" src="https://www.youtube.com/embed/{{c}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>

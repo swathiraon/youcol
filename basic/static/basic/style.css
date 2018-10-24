@@ -160,7 +160,7 @@ input[type="Submit"][value="Create account"]
 }
 .nv  li a{
 
-	color: white;
+	color:  black;
 	
 	margin-bottom: 20px;
     padding: 14px 16px;
@@ -174,7 +174,7 @@ input[type="Submit"][value="Create account"]
 }
 .nv1 li a{
 
-	color: white;
+	color:  black;
 	margin-bottom: 20px;
     padding: 14px 16px;
     font-size: 20px;

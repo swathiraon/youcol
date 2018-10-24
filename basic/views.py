@@ -39,7 +39,7 @@ def signup(request):
 		if User.objects.filter(email=email).exists():
 			return HttpResponse("email already exists")
 		password = request.POST.get('password')
-		repassword=request.POST['repassword']
+		repassword=request.POST.get('repassword')
 
 		if username is not None:
 			if password==repassword:

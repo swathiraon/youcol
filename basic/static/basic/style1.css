@@ -58,7 +58,7 @@ body {
 }
 .nv  li a{
 
-	color: white;
+	color:  black;
 	
 	margin-bottom: 20px;
     padding: 14px 16px;
@@ -72,7 +72,7 @@ body {
 }
 .nv1 li a{
 
-	color: white;
+	color: black;
 	margin-bottom: 20px;
     padding: 14px 16px;
     font-size: 20px;
@@ -94,9 +94,10 @@ body {
 }
 
 .play{
-	width: 390px;
+	width: 372px;
+	box-shadow: 10px 10px 5px ;
 	
 	background-image: linear-gradient(to bottom right,#000000 ,#555555);
 	margin-bottom: 10px;
-	margin-right: 10px;
+	margin-right: 1px;
 }
