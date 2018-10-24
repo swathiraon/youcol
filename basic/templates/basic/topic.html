@@ -12,20 +12,19 @@
 		
 		<div style="display:flex;margin:10px;">
 			<div class="row">
-			{% for topic in post%}
-			<div class="col-md-4">
-
-				<div class="card" style="width:300px;margin-right:10px;display:inline-block;margin-bottom:10px;">
-					<div class="card-body">
-						<h5 class="card-title">{{topic.name}}</h5>
-						<p class="card-text">{{topic.tdescription}}</p>
-						<a href="/{{topic.id}}/" class="btn btn-primary">Go somewhere</a>
+				{% for topic in post%}
+					<div class="col-md-4">
+						<div class="card" style="width:300px;margin-right:10px;display:inline-block;margin-bottom:10px;">
+							<div class="card-body">
+								<h5 class="card-title">{{topic.name}}</h5>
+								<p class="card-text">{{topic.tdescription}}</p>
+								<a href="/{{topic.id}}/" class="btn btn-primary">Know More</a>
+							</div>
+						</div>
 					</div>
+					{%endfor%}
 				</div>
-				</div>
-				{%endfor%}
 			</div>
-		</div>
 		</div>
 	</div>
 	<div class="col-md-1">
