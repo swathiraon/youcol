@@ -124,7 +124,22 @@ def signout(request):
     logout(request)
     return redirect(home)
 
+# def mypreference(request):
+# 	user=request.user
+# 	posts=Playlist.objects.filter(user=user)
+# 	preff=Preference.objects.filter(user=user)
+# 	all_pref=Topic.objects.all()
 
+
+
+
+
+
+# 	context={'posts':posts'user_pref':user_pref,'all_pref':all_pref}
+# 	return render(request,'basic/preferences.html',context)
+
+# def editplay(request):
+# 	return render(request,'basic/home.html')
 
 
 
