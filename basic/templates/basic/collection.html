@@ -2,36 +2,18 @@
 {%extends 'basic/base.html'%}
 {%block body%}
 <div  class="row">
-	<div class="col-md-1">
-		
-	</div>
-	<div class="col-md-10">
-		
-		
-		
-		<div >
-			<div class="row">
-				{%for c in posts%}
-				<div class="col-md-4">
-					<div class="card" style="width: 18rem;
-						
-						" >
-						<div class="card-body">
-							<h5 class="card-title">{{c.title}}</h5>
-							
-							<p class="card-text">{{c.description}}</p>
-							
-							<a href="playlist/{{c.pk}}" class="btn btn-primary">Know More</a>
-							
-						</div>
-					</div>
-				</div>
-				{%endfor%}
+	<div class="col-md-12 d-flex">
+		{%for c in posts%}
+		<div class="card" style="width:18rem">
+			<div class="card-body">
+				<h5 class="card-title">{{c.title}}</h5>
+				
+				<p class="card-text">{{c.description}}</p>
+				<a href="playlist/{{c.pk}}" class="card-link">Know More</a>
+				
 			</div>
 		</div>
-	</div>
-	<div class="col-md-1">
-		
+		{%endfor%}
 	</div>
 </div>
 {%endblock%}
