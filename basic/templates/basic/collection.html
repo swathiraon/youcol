@@ -14,12 +14,14 @@
 				{%for c in posts%}
 				<div class="col-md-4">
 					<div class="card" style="width: 18rem;
+						
 						" >
 						<div class="card-body">
 							<h5 class="card-title">{{c.title}}</h5>
 							
 							<p class="card-text">{{c.description}}</p>
-							<a href="playlist/{{c.pk}}" class="card-link">Know More</a>
+							
+							<a href="playlist/{{c.pk}}" class="btn btn-primary">Know More</a>
 							
 						</div>
 					</div>
