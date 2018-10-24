@@ -23,6 +23,10 @@ class Playlist(models.Model):
 	def __str__(self):
 		return str(self.title)
 
+class Preference(models.Model):
+	user=models.ForeignKey(User,on_delete=models.CASCADE)
+	pref=ArrayField(models.IntegerField(null=True),blank=True)
+
 
 
 
