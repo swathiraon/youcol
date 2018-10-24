@@ -12,4 +12,6 @@ urlpatterns = [
 	path('createplayll/',views.createplay,name='createplay'),
 	path('<int:topic_id>/<int:pid>/addurl/',views.addurl,name='addurl'),
 	path('logout/',views.signout,name='signout'),
+	path('editplay/',views.editplay,name='editplay'),
+	path('mypref/',views.mypreference,name="mypreference"),
 ]
